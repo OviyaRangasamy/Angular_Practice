@@ -1,0 +1,39 @@
+
+
+<div>
+    <p>Positive Quotes</p>
+    <input #myName placeholder="Enter your name" />
+    <button (click)="displayName(myName.value)">Click Me</button>
+    <p>{{ greeting }}</p>
+  
+    <div *ngIf="display; then thenBlock; else elseBlock"></div>
+  
+    <ng-template #thenBlock>
+      <p>Hello {{ myName.value }}!Have a good day</p>
+      <div *ngFor = "let color of colorData">
+        <input type="radio" name="color" value={{color}} #{{color}} (click)="colorPick(color)"/>
+        <label for={{color}}>{{color}}</label>
+      </div>
+      <div [ngSwitch]="colour">
+        <h3 *ngSwitchCase="'red'" [style.color]="'red'">
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h3 *ngSwitchCase="'blue'" [style.color]="'blue'">
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h3 *ngSwitchCase="'green'" [style.color]="'green'">
+       
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h3 *ngSwitchCase="'yellow'" [style.color]="'yellow'">
+        
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h4 *ngSwitchDefault> Pick a color</h4>
+      </div>   
+    </ng-template>
+  
+    <ng-template #elseBlock>
+      <p>Please enter the data</p>
+    </ng-template>
+  </div>
