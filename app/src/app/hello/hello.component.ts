@@ -9,7 +9,7 @@ export class HelloComponent {
 
   public greeting = "";
   public colour = "" ;
-  public colorData = ["red","green","blue","yellow"]
+  public colorData = ["red","green","blue","orange"]
   public display : string | boolean = "";
   displayName(input: string) {
     if(input===""){

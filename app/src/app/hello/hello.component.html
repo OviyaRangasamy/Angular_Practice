@@ -9,27 +9,29 @@
     <div *ngIf="display; then thenBlock; else elseBlock"></div>
   
     <ng-template #thenBlock>
-      <p>Hello {{ myName.value }}!Have a good day</p>
+      <!-- <p>Hello {{ myName.value }}!Have a good day</p> -->
+      <h4 > Pick a color to see the difference</h4>
+
       <div *ngFor = "let color of colorData">
         <input type="radio" name="color" value={{color}} #{{color}} (click)="colorPick(color)"/>
         <label for={{color}}>{{color}}</label>
       </div>
       <div [ngSwitch]="colour">
-        <h3 *ngSwitchCase="'red'" [style.color]="'red'">
+        <h3 *ngSwitchCase="'red'" [ngClass]="'red'">
           Hello {{ myName.value }}! Have a good day
         </h3>
-        <h3 *ngSwitchCase="'blue'" [style.color]="'blue'">
+        <h3 *ngSwitchCase="'blue'" [ngClass]="'blue'">
           Hello {{ myName.value }}! Have a good day
         </h3>
-        <h3 *ngSwitchCase="'green'" [style.color]="'green'">
+        <h3 *ngSwitchCase="'green'" [ngClass]="'green'">
        
           Hello {{ myName.value }}! Have a good day
         </h3>
-        <h3 *ngSwitchCase="'yellow'" [style.color]="'yellow'">
-        
+        <h3 *ngSwitchCase="'orange'" [ngClass]="'orange'">
           Hello {{ myName.value }}! Have a good day
         </h3>
-        <h4 *ngSwitchDefault> Pick a color</h4>
+        <h4 *ngSwitchDefault>Hello {{ myName.value }}! Have a good day</h4>
+
       </div>   
     </ng-template>
   
