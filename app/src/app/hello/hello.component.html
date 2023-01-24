@@ -16,7 +16,7 @@
         <input type="radio" name="color" value={{color}} #{{color}} (click)="colorPick(color)"/>
         <label for={{color}}>{{color}}</label>
       </div>
-      <div [ngSwitch]="colour">
+      <!-- <div [ngSwitch]="colour" >
         <h3 *ngSwitchCase="'red'" [ngClass]="'red'">
           Hello {{ myName.value }}! Have a good day
         </h3>
@@ -30,9 +30,27 @@
         <h3 *ngSwitchCase="'orange'" [ngClass]="'orange'">
           Hello {{ myName.value }}! Have a good day
         </h3>
-        <h4 *ngSwitchDefault>Hello {{ myName.value }}! Have a good day</h4>
+        <h4 *ngSwitchDefault> Hello {{ myName.value }}! Have a good day</h4>
 
-      </div>   
+      </div>    -->
+
+      <div [ngSwitch]="colour" [ngClass]="colour" >
+        <h3 *ngSwitchCase="'red'" >
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h3 *ngSwitchCase="'blue'" >
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h3 *ngSwitchCase="'green'" >
+       
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h3 *ngSwitchCase="'orange'" >
+          Hello {{ myName.value }}! Have a good day
+        </h3>
+        <h4 *ngSwitchDefault> Hello {{ myName.value }}! Have a good day</h4>
+
+      </div>
     </ng-template>
   
     <ng-template #elseBlock>

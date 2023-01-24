@@ -11,6 +11,7 @@ export class HelloComponent {
   public colour = "" ;
   public colorData = ["red","green","blue","orange"]
   public display : string | boolean = "";
+
   displayName(input: string) {
     if(input===""){
      this.display = false;
@@ -25,4 +26,7 @@ export class HelloComponent {
     console.log(this.colour)
     return(this.colour)
 }
+
+
+
 }
